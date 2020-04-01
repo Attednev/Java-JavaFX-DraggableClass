@@ -14,6 +14,7 @@ public class Controller {
     private void initialize() {
         MyClass myObject = new MyClass();
         myObject.makeDraggable(root, upperContainer, lowerContainer);
+        myObject.setDeleteOnRelease(true);
         this.initialContainer.getChildren().add(myObject);
     }
 

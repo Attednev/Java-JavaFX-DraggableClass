@@ -17,6 +17,7 @@ public class MyClass extends Draggable {
     protected Node getCopyOfInstance() {
         MyClass newObject = new MyClass();
         newObject.makeDraggable(this.getRootPane(), this.getPossibleContainers());
+        newObject.setDeleteOnRelease(this.getDeleteOnRelease());
         return newObject;
     }
 }

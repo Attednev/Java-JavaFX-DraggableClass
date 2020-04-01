@@ -9,6 +9,7 @@ import java.util.Arrays;
 public abstract class Draggable extends Region {
     private Pane rootPane = null;
     private ArrayList<Node> possibleContainers = null;
+    private boolean deleteOnRelease = false;
 
     public void makeDraggable(Pane rootPane, Node... possibleContainers) {
         this.makeDraggable(rootPane, new ArrayList<>(Arrays.asList(possibleContainers)));
@@ -37,6 +38,9 @@ public abstract class Draggable extends Region {
                 for (Node n : possibleContainers) {
                     if (overNode(n, e)) {
                         ((Pane) n).getChildren().add(this.getCopyOfInstance());
+                        if (this.deleteOnRelease) {
+                            ((Pane) this.getParent()).getChildren().remove(this);
+                        }
                         break;
                     }
                 }
@@ -69,4 +73,12 @@ public abstract class Draggable extends Region {
         return this.rootPane;
     }
 
+
+    public void setDeleteOnRelease(boolean deleteOnRelease) {
+        this.deleteOnRelease = deleteOnRelease;
+    }
+
+    public boolean getDeleteOnRelease() {
+        return this.deleteOnRelease;
+    }
 }
