@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <center>
+        <Pane fx:id="root">
+            <BorderPane>
+                <right>
+                    <ScrollPane prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: black;" BorderPane.alignment="TOP_CENTER">
+                        <VBox fx:id="initialContainer" alignment="TOP_CENTER" prefHeight="195.0" prefWidth="145.0" />
+                    </ScrollPane>
+                </right>
+                <center>
+                    <VBox>
+                        <ScrollPane prefHeight="100.0" prefWidth="150.0" style="-fx-border-color: black;">
+                            <VBox fx:id="upperContainer" alignment="TOP_CENTER" prefHeight="95.0" prefWidth="145.0" />
+                        </ScrollPane>
+                        <ScrollPane prefHeight="100.0" prefWidth="150.0" style="-fx-border-color: black;">
+                            <VBox fx:id="lowerContainer" alignment="TOP_CENTER" prefHeight="95.0" prefWidth="145.0" />
+                        </ScrollPane>
+                    </VBox>
+                </center>
+            </BorderPane>
+        </Pane>
+    </center>
+</BorderPane>
