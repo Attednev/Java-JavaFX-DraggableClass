@@ -12,7 +12,7 @@ public class Controller {
 
     @FXML
     private void initialize() {
-        MyClass myObject = new MyClass();
+        MyClass myObject = new MyClass(0);
         myObject.makeDraggable(root, upperContainer, lowerContainer);
         myObject.setDeleteOnRelease(true);
         this.initialContainer.getChildren().add(myObject);

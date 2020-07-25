@@ -4,7 +4,10 @@ import javafx.scene.layout.HBox;
 
 public class MyClass extends Draggable {
 
-    public MyClass() {
+    public int i;
+
+    public MyClass(int i) {
+        this.i = i;
         HBox box = new HBox();
         box.setPrefSize(130, 20);
         box.setStyle("-fx-border-color: black; -fx-background-color: white; -fx-alignment: center");
@@ -12,12 +15,12 @@ public class MyClass extends Draggable {
         box.getChildren().add(label);
         this.getChildren().add(box);
     }
-
+/*
     @Override
     protected Node getCopyOfInstance() {
-        MyClass newObject = new MyClass();
+        MyClass newObject = new MyClass(this.i);
         newObject.makeDraggable(this.getRootPane(), this.getPossibleContainers());
         newObject.setDeleteOnRelease(this.getDeleteOnRelease());
         return newObject;
-    }
+    }*/
 }
